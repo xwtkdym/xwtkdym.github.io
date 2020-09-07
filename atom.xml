@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>羽毛小站</title>
+  
+  <subtitle>轻风舞如歌</subtitle>
+  <link href="http://xwtkdym/blog/atom.xml" rel="self"/>
+  
+  <link href="http://xwtkdym/blog/"/>
+  <updated>2020-09-07T15:40:53.939Z</updated>
+  <id>http://xwtkdym/blog/</id>
+  
+  <author>
+    <name>xwtkdym</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>沙发</title>
+    <link href="http://xwtkdym/blog/2020/09/07/%E6%B2%99%E5%8F%91/"/>
+    <id>http://xwtkdym/blog/2020/09/07/%E6%B2%99%E5%8F%91/</id>
+    <published>2020-09-07T15:40:22.000Z</published>
+    <updated>2020-09-07T15:40:53.939Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;好久不写东西了，可能要重拾了！&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
