@@ -3,11 +3,11 @@
   <title>羽毛小站</title>
   
   <subtitle>轻风舞如歌</subtitle>
-  <link href="http://xwtkdym/blog/atom.xml" rel="self"/>
+  <link href="http://xwtkdym.github.io/atom.xml" rel="self"/>
   
-  <link href="http://xwtkdym/blog/"/>
+  <link href="http://xwtkdym.github.io/"/>
   <updated>2020-09-07T15:40:53.939Z</updated>
-  <id>http://xwtkdym/blog/</id>
+  <id>http://xwtkdym.github.io/</id>
   
   <author>
     <name>xwtkdym</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>沙发</title>
-    <link href="http://xwtkdym/blog/2020/09/07/%E6%B2%99%E5%8F%91/"/>
-    <id>http://xwtkdym/blog/2020/09/07/%E6%B2%99%E5%8F%91/</id>
+    <link href="http://xwtkdym.github.io/2020/09/07/%E6%B2%99%E5%8F%91/"/>
+    <id>http://xwtkdym.github.io/2020/09/07/%E6%B2%99%E5%8F%91/</id>
     <published>2020-09-07T15:40:22.000Z</published>
     <updated>2020-09-07T15:40:53.939Z</updated>
     
