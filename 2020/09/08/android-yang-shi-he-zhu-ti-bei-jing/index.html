@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="沙发, 羽毛小站">
+    <meta name="keywords" content="Android样式和主体背景, 羽毛小站">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>沙发 | 羽毛小站</title>
+    <title>Android样式和主体背景 | 羽毛小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">沙发</h1>
+                    <h1 class="description center-align post-title">Android样式和主体背景</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Android/">
+                                <span class="chip bg-color">Android</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-07
+                    2020-09-08
                 </div>
                 
 
@@ -452,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    13
+                    455
                 </div>
                 
 
@@ -464,7 +468,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>好久不写东西了，可能要重拾了！</p>
+                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>借助 Android 上的样式和主题背景，您可将应用设计的细节与界面的结构和行为分开，类似于网页设计中的样式表。</p>
+<p>样式是一个属性集合，用于指定单个 <code>View</code> 的外观。 样式可以指定字体颜色、字号、背景颜色等属性。</p>
+<blockquote>
+<p> 样式和主体背景在 res/values/ 中的样式资源文件中声明，通常命名为 styles.xml。</p>
+</blockquote>
+<h1 id="定义样式并使用"><a href="#定义样式并使用" class="headerlink" title="定义样式并使用"></a>定义样式并使用</h1><ol>
+<li><p>用唯一标识定义一个 &lt;style&gt; 元素</p>
+</li>
+<li><p>为要定义的样式添加 &lt;item&gt; 元素</p>
+<blockquote>
+<p>item中使用name来指定要在布局中使用的属性，对应布局属性的值会被替换为item元素的值。</p>
+</blockquote>
+</li>
+</ol>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>resources</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>GreenText<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>TextAppearance.AppCompat<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+        &lt;item name=<span class="token string">"android:textColor"</span>><span class="token hexcode">#00ff00</span>&lt;/item>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>resources</span><span class="token punctuation">></span></span></code></pre>
+<p>将上面的样式定义到布局</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span><span class="token style-attr language-css"><span class="token attr-name">
+          <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">@style/GreenText</span><span class="token punctuation">"</span></span>
+          <span class="token attr-name">...</span><span class="token punctuation">/></span></span></code></pre>
+<div style="callout:primary"> 只有添加了 style 属性的元素才会应用这些样式属性，任何子视图都不会应用这些样式。如果你希望子视图继承样式，则应该改为具有android:theme属性的样式。 </div>
+
+<h2 id="主题背景"><a href="#主题背景" class="headerlink" title="主题背景"></a>主题背景</h2><p>主体背景是一系列资源的集合，可以被样式或者布局使用。提供了一种对Android资源的语义名称，可以让开发者在其他地方引用这些资源。</p>
+<div style="callout:default"> 相对于样式，主题的设置会影响所有子View </div>
+
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Theme.Plaid<span class="token punctuation">"</span></span> <span class="token attr-name">parent</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>...<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+       &lt;item name=<span class="token string">"colorPrimary"</span>>@color/teal_<span class="token number">500</span>&lt;/item>
+       &lt;item name=<span class="token string">"colorSecondary"</span>>@color/pink_<span class="token number">200</span>&lt;/item>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="使用主题"><a href="#使用主题" class="headerlink" title="使用主题"></a>使用主题</h2><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!-- AndroidManifest.xml --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>application</span>
+     <span class="token attr-name"><span class="token namespace">android:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/Theme.Plaid<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>application</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>activity</span>
+     <span class="token attr-name"><span class="token namespace">android:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/Theme.Plaid.About<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+&lt;!- layout/xxx.xml -->
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ConstraintLayout</span>
+    <span class="token attr-name"><span class="token namespace">android:</span>theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@style/Theme.Plaid.Foo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>在ViewGroup中使用时，可以这样做</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ViewGroup</span> <span class="token attr-name">...</span>
+     <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>?attr/colorSurface<span class="token punctuation">"</span></span> <span class="token punctuation">></span></span></code></pre>
+<p>?attr/themeAttributeName可以委托主题背景来完成。</p>
 
             </div>
             <hr/>
@@ -490,7 +541,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xwtkdym.github.io/2020/09/07/sha-fa/">https://xwtkdym.github.io/2020/09/07/sha-fa/</a>
+                    <a href="https://xwtkdym.github.io/2020/09/08/android-yang-shi-he-zhu-ti-bei-jing/">https://xwtkdym.github.io/2020/09/08/android-yang-shi-he-zhu-ti-bei-jing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +578,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Android/">
+                                    <span class="chip bg-color">Android</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -694,22 +749,22 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/09/08/android-yang-shi-he-zhu-ti-bei-jing/">
+                <a href="/2020/09/08/context/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Android样式和主体背景">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Context">
                         
-                        <span class="card-title">Android样式和主体背景</span>
+                        <span class="card-title">Context</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简介借助 Android 上的样式和主题背景，您可将应用设计的细节与界面的结构和行为分开，类似于网页设计中的样式表。
-样式是一个属性集合，用于指定单个 View 的外观。 样式可以指定字体颜色、字号、背景颜色等属性。
+                            前言Context意味着一个场景，就是用户和软件交互的过程。从安卓的角度来看，Activity，Service都是一个Context。
+简介Context的类关系图如下：
 
- 样式和主体背景在 
+Context数量每个应用程序会有一个 Application，另
                         
                     </div>
                     <div class="publish-info">
@@ -739,7 +794,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/09/07/sha-fa/">
@@ -770,7 +825,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

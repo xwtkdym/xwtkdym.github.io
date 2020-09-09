@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="沙发, 羽毛小站">
+    <meta name="keywords" content="Context, 羽毛小站">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>沙发 | 羽毛小站</title>
+    <title>Context | 羽毛小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">沙发</h1>
+                    <h1 class="description center-align post-title">Context</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Android/">
+                                <span class="chip bg-color">Android</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-07
+                    2020-09-08
                 </div>
                 
 
@@ -452,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    13
+                    640
                 </div>
                 
 
@@ -464,7 +468,91 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>好久不写东西了，可能要重拾了！</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><code>Context</code>意味着一个场景，就是用户和软件交互的过程。从安卓的角度来看，<code>Activity</code>，<code>Service</code>都是一个Context。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p><code>Context</code>的类关系图如下：</p>
+<p><img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuNBEpoj9hIXHiAdHrLM0SiAB4WiAKekmoddc5kHmSQ4gH54Gaf6QcmgLmAekEBMeB3Cv5QkSOq51JcPoOabcVXw69NfwTiYEG9VMpKbDAudEo4n9ISsBrKLLoeNkDeI5oIMPPPabbLmEgNafmF000000" alt="Context 类关系图"></p>
+<h1 id="Context数量"><a href="#Context数量" class="headerlink" title="Context数量"></a><code>Context</code>数量</h1><p>每个应用程序会有一个 <code>Application</code>，另外加上<code>Activity</code>和<code>Service</code>的数量就是Context的数量。</p>
+<div style="callout:primary"> 一般情况下只有一个<code>Application</code>，但是多进程情况等需要额外考虑<code>Application</code>的数量</div>
+
+<h1 id="Context-的作用"><a href="#Context-的作用" class="headerlink" title="Context 的作用"></a><code>Context</code> 的作用</h1><p><code>Context</code> 具体功能是ContextImpl类实现的，所以<code>Activity</code>、<code>Service</code>和<code>Application</code>这三种类型的<code>Context</code>都是通用的。</p>
+<div style="callout:wraning">对于启动<code>Activity</code>，弹出<code>Toast</code>。处于安全考虑，它们不能凭空出现，必须建立在另一个<code>Activity</code>的基础之上(除非是 <code>System Alert</code>类型的<code>Dialog</code>)。这种类型下只能用<code>Activity</code>类型的<code>Context</code>。</div>
+
+<h1 id="Context提供的方法"><a href="#Context提供的方法" class="headerlink" title="Context提供的方法"></a><code>Context</code>提供的方法</h1><pre class=" language-Java"><code class="language-Java">public abstract class Context &#123; 
+    // 四大组件相关 
+    public abstract void startActivity(Intent intent); 
+    public abstract void startActivity(Intent intent, @Nullable Bundle options); 
+    public abstract void startActivities(Intent[] intents); 
+    public abstract void startActivities(Intent[] intents, Bundle options); 
+    public abstract void sendBroadcast(Intent intent); 
+    public abstract void sendBroadcast(Intent intent, @Nullable String receiverPermission); 
+    public abstract void sendOrderedBroadcast(Intent intent, String receiverPermission); 
+    public abstract Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter); 
+    public abstract void unregisterReceiver(BroadcastReceiver receiver); 
+    public abstract ComponentName startService(Intent service); 
+    public abstract ComponentName startForegroundService(Intent service); 
+    public abstract boolean stopService(Intent service); 
+    public abstract boolean bindService(Intent service, ServiceConnection conn, int flags); 
+    public abstract void unbindService(@NonNull ServiceConnection conn); 
+    public abstract ContentResolver getContentResolver(); 
+        // 获取系统资源 
+    public abstract AssetManager getAssets(); 
+    public abstract Resources getResources(); 
+    public abstract PackageManager getPackageManager(); 
+    public abstract ClassLoader getClassLoader(); 
+    public abstract Context getApplicationContext(); 
+    public abstract Context createConfigurationContext(Configuration overrideConfiguration); 
+    public abstract Context createDisplayContext(@NonNull Display display); 
+    public abstract @Nullable Object getSystemService(@ServiceName @NonNull String name); 
+    public final @Nullable <T> T getSystemService(@NonNull Class<T> serviceClass); 
+        // 获取应用资源 
+    public final CharSequence getText(@StringRes int resId); 
+    public final String getString(@StringRes int resId); 
+    public final String getString(@StringRes int resId, Object... formatArgs); 
+    public final int getColor(@ColorRes int id); 
+    public final Drawable getDrawable(@DrawableRes int id); 
+    public final ColorStateList getColorStateList(@ColorRes int id); 
+    public abstract void setTheme(@StyleRes int resid); 
+    public abstract Resources.Theme getTheme(); 
+    public final TypedArray obtainStyledAttributes(@NonNull int[] attrs); 
+    public final TypedArray obtainStyledAttributes(@StyleRes int resid, int[] attrs); 
+        // 获取应用相关信息 
+    public String getOpPackageName(); 
+    public Executor getMainExecutor(); 
+    public abstract Looper getMainLooper(); 
+    public abstract String getPackageName(); 
+    public abstract ApplicationInfo getApplicationInfo(); 
+    public abstract String getPackageResourcePath(); 
+    public abstract String getPackageCodePath(); 
+    public abstract @Nullable String getSystemServiceName(@NonNull Class<?> serviceClass); 
+    public abstract int checkPermission(@NonNull String permission, int pid, int uid); 
+    public abstract int checkSelfPermission(@NonNull String permission); 
+        // 文件相关 
+    public abstract boolean deleteFile(String name); 
+    public abstract File getDataDir(); 
+    public abstract File getFilesDir(); 
+    public abstract File getNoBackupFilesDir(); 
+    public abstract File getExternalFilesDir(@Nullable String type); 
+    public abstract File[] getExternalFilesDirs(String type); 
+    public abstract File getObbDir(); 
+    public abstract File[] getObbDirs(); 
+    public abstract File getCacheDir(); 
+    public abstract File getCodeCacheDir(); 
+    public abstract File getExternalCacheDir(); 
+    public abstract File[] getExternalCacheDirs(); 
+    public abstract File[] getExternalMediaDirs(); 
+    public abstract SharedPreferences getSharedPreferences(String name, int mode); 
+    public abstract boolean moveSharedPreferencesFrom(Context sourceContext, String name); 
+    public abstract void reloadSharedPreferences(); 
+    public abstract FileInputStream openFileInput(String name); 
+    public abstract FileOutputStream openFileOutput(String name, @FileMode int mode); 
+        // 数据库相关 
+    public abstract SQLiteDatabase openOrCreateDatabase(String name, int mode, CursorFactory f); 
+    public abstract boolean deleteDatabase(String name); 
+    public abstract String[] databaseList(); 
+        // 其他 
+    public void registerComponentCallbacks(ComponentCallbacks callback); 
+    public void unregisterComponentCallbacks(ComponentCallbacks callback);
+&#125;</code></pre>
 
             </div>
             <hr/>
@@ -490,7 +578,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xwtkdym.github.io/2020/09/07/sha-fa/">https://xwtkdym.github.io/2020/09/07/sha-fa/</a>
+                    <a href="https://xwtkdym.github.io/2020/09/08/context/">https://xwtkdym.github.io/2020/09/08/context/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +615,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/Android/">
+                                    <span class="chip bg-color">Android</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -694,6 +786,55 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
+                <a href="/2020/09/08/zhuang-shi-mo-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="适配器模式">
+                        
+                        <span class="card-title">适配器模式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            模式动机动态的给类添加行为，通过将一个对象嵌入另一个对象，由另一个对象来决定是否调用来扩展自己的行为。
+
+对比通过继承来给类增加功能，装饰器模式(Decorator)是动态的，可以由用户来控制是添加行为的方式和时机。
+
+模式定义装饰模式(D
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            xwtkdym
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/design-pattern/">
+                        <span class="chip bg-color">design-pattern</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/09/08/android-yang-shi-he-zhu-ti-bei-jing/">
                     <div class="card-image">
                         
@@ -713,9 +854,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -732,45 +873,6 @@
                     </a>
                     
                 </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/09/07/sha-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="沙发">
-                        
-                        <span class="card-title">沙发</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            好久不写东西了，可能要重拾了！
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            xwtkdym
-                            
-                        </span>
-                    </div>
-                </div>
-
                 
             </div>
         </div>

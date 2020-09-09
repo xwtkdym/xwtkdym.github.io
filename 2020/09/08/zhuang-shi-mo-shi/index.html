@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="沙发, 羽毛小站">
+    <meta name="keywords" content="适配器模式, 羽毛小站">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>沙发 | 羽毛小站</title>
+    <title>适配器模式 | 羽毛小站</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">沙发</h1>
+                    <h1 class="description center-align post-title">适配器模式</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/design-pattern/">
+                                <span class="chip bg-color">design-pattern</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-09-07
+                    2020-09-08
                 </div>
                 
 
@@ -452,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    13
+                    224
                 </div>
                 
 
@@ -464,7 +468,27 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>好久不写东西了，可能要重拾了！</p>
+                <h1 id="模式动机"><a href="#模式动机" class="headerlink" title="模式动机"></a>模式动机</h1><p>动态的给类添加行为，通过将一个对象嵌入另一个对象，由另一个对象来决定是否调用来扩展自己的行为。</p>
+<blockquote>
+<p>对比通过继承来给类增加功能，装饰器模式(<code>Decorator</code>)是动态的，可以由用户来控制是添加行为的方式和时机。</p>
+</blockquote>
+<h1 id="模式定义"><a href="#模式定义" class="headerlink" title="模式定义"></a>模式定义</h1><p>装饰模式(<code>Decorator Pattern</code>)：动态的给对象添加一些额外的职责，也称为包装器(<code>Wrapper</code>)。</p>
+<p>模式结构</p>
+<p><img src="http://www.plantuml.com/plantuml/png/dP712W8X54NtxolUieYP3uWMazEFY3v8cF4EQhEf_ZqXK2eeoPLSppqgRuX9XtIP9nenB_3Y4nzkVSyZl0cIfCJlm4aCWau8H6NBw3gkZNhmwYpnyIUXYCoaOwnMlXBdjMCiaX47lzdkUOMpTAzmVNnpgTpP0dz-vKlhcMjhbPorMn4QVEfFto3Uvd4-0000" alt="装饰者模式类图"></p>
+<h1 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h1><ul>
+<li><p>同样是扩展功能，装饰模式比继承更加灵活</p>
+</li>
+<li><p>可以通过动态方式扩展对象，通过配置文件来调整等</p>
+</li>
+<li><p>能够通过排列组合创造功能丰富的对象</p>
+</li>
+<li><p>符合开闭原则</p>
+<h1 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h1></li>
+<li><p>多次装饰的对象，出错排查困难重重</p>
+</li>
+<li><p>产生很多琐碎的对象，增加系统复杂度</p>
+</li>
+</ul>
 
             </div>
             <hr/>
@@ -490,7 +514,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xwtkdym.github.io/2020/09/07/sha-fa/">https://xwtkdym.github.io/2020/09/07/sha-fa/</a>
+                    <a href="https://xwtkdym.github.io/2020/09/08/zhuang-shi-mo-shi/">https://xwtkdym.github.io/2020/09/08/zhuang-shi-mo-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -527,7 +551,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/design-pattern/">
+                                    <span class="chip bg-color">design-pattern</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -694,22 +722,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/09/08/android-yang-shi-he-zhu-ti-bei-jing/">
+                <a href="/2020/09/08/dai-li-mo-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Android样式和主体背景">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="代理模式">
                         
-                        <span class="card-title">Android样式和主体背景</span>
+                        <span class="card-title">代理模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简介借助 Android 上的样式和主题背景，您可将应用设计的细节与界面的结构和行为分开，类似于网页设计中的样式表。
-样式是一个属性集合，用于指定单个 View 的外观。 样式可以指定字体颜色、字号、背景颜色等属性。
+                            模式动机客户端不能或者不想直接引用一个对象时，可以通过代理来实现间接引用。
 
- 样式和主体背景在 
                         
                     </div>
                     <div class="publish-info">
@@ -727,8 +753,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/design-pattern/">
+                        <span class="chip bg-color">design-pattern</span>
                     </a>
                     
                 </div>
@@ -739,28 +765,30 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/07/sha-fa/">
+                <a href="/2020/09/08/context/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="沙发">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Context">
                         
-                        <span class="card-title">沙发</span>
+                        <span class="card-title">Context</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            好久不写东西了，可能要重拾了！
+                            前言Context意味着一个场景，就是用户和软件交互的过程。从安卓的角度来看，Activity，Service都是一个Context。
+简介Context的类关系图如下：
 
+Context数量每个应用程序会有一个 Application，另
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-08
                             </span>
                         <span class="publish-author">
                             
@@ -770,7 +798,14 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
